@@ -1,6 +1,13 @@
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "@/app/api/auth/[...nextauth]/route"
-import { Session } from "next-auth"
+import type { Session } from "next-auth"
+
+export type AuthUser = {
+  id: string
+  email: string
+  name: string
+  image?: string
+}
 
 export async function getSession(): Promise<Session | null> {
   try {
@@ -11,10 +18,10 @@ export async function getSession(): Promise<Session | null> {
   }
 }
 
-export async function getCurrentUser() {
+export async function getCurrentUser(): Promise<AuthUser | null> {
   try {
     const session = await getSession()
-    return session?.user ?? null
+    return session?.user as AuthUser ?? null
   } catch (error) {
     console.error("Get current user error:", error)
     return null

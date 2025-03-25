@@ -4,6 +4,23 @@ import GithubProvider from "next-auth/providers/github"
 import CredentialsProvider from "next-auth/providers/credentials"
 import type { NextAuthOptions } from "next-auth"
 
+declare module "next-auth" {
+  interface Session {
+    user: {
+      id: string
+      email: string
+      name: string
+      image?: string
+    }
+  }
+  interface User {
+    id: string
+    email: string
+    name: string
+    image?: string
+  }
+}
+
 export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
