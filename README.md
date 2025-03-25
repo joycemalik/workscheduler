@@ -34,7 +34,7 @@ A modern task management application built with Next.js, featuring AI-powered ta
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
+git clone https://github.com/joycemalik/workscheduler.git
 cd your-repo-name
 ```
 
@@ -123,9 +123,6 @@ npm start
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Support
-
-For support, email support@yourdomain.com or open an issue in the GitHub repository.
 
 ## Acknowledgments
 
